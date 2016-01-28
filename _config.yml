@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Rob McCardle
-email: rob@domain.com
+title: mccardle.io
+email: email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Rob McCardle.
+  mccardle.io
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mccardle.io" # the base hostname & protocol for your site
 twitter_username: robmccardle
