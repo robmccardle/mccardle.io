@@ -18,4 +18,4 @@ url: https://mccardle.io
 script:
 - echo "Hello Travis"
 after_script:
-- bundle install
+- bundle exec rake deploy
