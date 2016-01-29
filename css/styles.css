@@ -1,0 +1,210 @@
+body {
+  background: #49C5CE;
+  background: linear-gradient(to left, #49C5CE 40%, #4A90E2);
+  padding: 60px;
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+h1, h2 {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0; }
+
+span {
+  display: inline-block; }
+
+ul {
+  display: block;
+  list-style-type: none;
+  text-align: right; }
+
+a {
+  color: #80DEEA; }
+
+a:hover {
+  opacity: 0.6; }
+
+code {
+  color: #000;
+  opacity: 0.5; }
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 80%;
+  margin: 40px 0 0 40px; }
+
+#page {
+  /* margin-left: 250px;
+  / max-width:800px; */
+  margin-left: 80px;
+  margin-top: -38px;
+  overflow: hidden;
+  height: 44px; }
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+#footer-text {
+  padding-left: 60px;
+  opacity: 0.6; }
+
+.menu {
+  position: relative;
+  margin: 0 20px 0 0;
+  padding-left: 1.25em;
+  cursor: pointer;
+  width: 30px;
+  height: 50px;
+  text-align: right; }
+
+/*A simple overlay that registers the menu click*/
+/*needed because of e.stopPropagation(); blocking the menu-global click function*/
+.click-blocker {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.menu-close {
+  font-size: 0em;
+  opacity: 0;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  -webkit-transition: all 0.2s 0s, ;
+  transition: all 0.2s 0s, ; }
+
+.menu-close-visible {
+  font-size: 2em;
+  opacity: 1;
+  -webkit-transition: all 0.2s 0.4s, ;
+  transition: all 0.2s 0.4s, ; }
+
+.menu-global {
+  position: absolute;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #FFF;
+  -webkit-transition: all 0.2s 0s, ;
+  transition: all 0.2s 0s, ; }
+
+.menu-top {
+  top: 0; }
+
+.menu-middle {
+  top: 18px; }
+
+.menu-bottom, .menu-hidden {
+  top: 36px; }
+
+.menu-text {
+  color: #000;
+  opacity: 0;
+  font-size: 0em;
+  padding: 10px 0;
+  -webkit-transition: all 0.1s 0s, ;
+  transition: all 0.1s 0s, ; }
+
+.expand {
+  box-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px, rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
+  width: 200px;
+  height: 50px;
+  background: #E0F7FA #B2EBF2 #80DEEA #4DD0E1 #26C6DA #00BCD4 #00ACC1 #0097A7 #00838F #006064 10;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.5s 0s, left 0.1s 0s;
+  transition: all 0.5s 0s, left 0.1s 0s; }
+
+.expand:hover {
+  left: 10px;
+  -webkit-transition: all 0.2s 0s, ;
+  transition: all 0.2s 0s, ; }
+
+.menu-top-expand {
+  top: 50px;
+  background: #E0F7FA;
+  -webkit-transition: all 0.5s 0.4s, left 0.1s 0s;
+  transition: all 0.5s 0.4s, left 0.1s 0s; }
+
+.menu-middle-expand {
+  top: 100px;
+  background: #B2EBF2;
+  -webkit-transition: all 0.5s 0.3s, left 0.1s 0s;
+  transition: all 0.5s 0.3s, left 0.1s 0s; }
+
+.menu-bottom-expand {
+  top: 150px;
+  background: #80DEEA;
+  -webkit-transition: all 0.5s 0.2s, left 0.1s 0s;
+  transition: all 0.5s 0.2s, left 0.1s 0s; }
+
+.menu-text-expand {
+  opacity: 0.6;
+  padding: 10px;
+  font-size: 1.3em;
+  -webkit-transition: all 0.2s 0.7s, font-size 0.1s 0s;
+  transition: all 0.2s 0.7s, font-size 0.1s 0s; }
+
+.menu-hidden-expand:nth-child(1) {
+  background: #E0F7FA;
+  top: 50px; }
+
+.menu-hidden-expand:nth-child(2) {
+  background: #B2EBF2;
+  top: 100px; }
+
+.menu-hidden-expand:nth-child(3) {
+  background: #80DEEA;
+  top: 150px; }
+
+.menu-hidden-expand:nth-child(4) {
+  background: #4DD0E1;
+  top: 200px; }
+
+.menu-hidden-expand:nth-child(5) {
+  background: #26C6DA;
+  top: 250px; }
+
+.menu-hidden-expand:nth-child(6) {
+  background: #00BCD4;
+  top: 300px; }
+
+.menu-hidden-expand:nth-child(7) {
+  background: #00ACC1;
+  top: 350px; }
+
+.menu-hidden-expand:nth-child(8) {
+  background: #0097A7;
+  top: 400px; }
+
+.menu-hidden-expand:nth-child(9) {
+  background: #00838F;
+  top: 450px; }
+
+.menu-hidden-expand:nth-child(10) {
+  background: #006064;
+  top: 500px; }
+
+.menu-hidden-expand:nth-child(4) {
+  -webkit-transition: all 0.5s 0.1s, left 0.1s 0s;
+  transition: all 0.5s 0.1s, left 0.1s 0s; }
+
+.menu-hidden-expand:nth-last-of-type(1) {
+  height: 50px; }
+
+/**************END ADDITIONAL MENU ITEMS*******************/
+
+/*# sourceMappingURL=styles.css.map */

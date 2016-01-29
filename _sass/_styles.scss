@@ -1,0 +1,210 @@
+$itemHeight: 50px;
+
+$bgColor2: #4A90E2;
+$bgColor: #49C5CE;
+
+//Currently 10 colors, add more if you have over 10 menu items
+$menuColor: #E0F7FA
+  #B2EBF2 #80DEEA #4DD0E1
+  #26C6DA #00BCD4 #00ACC1 
+  #0097A7 #00838F #006064;
+
+$top-font: 'Montserrat', sans-serif;
+$mid-font: 'Montserrat', sans-serif;
+
+@mixin transition($obj, $dur, $del, $obj2, $dur2, $del2){
+  -webkit-transition: $obj $dur $del, $obj2 $dur2 $del2;
+  transition: $obj $dur $del, $obj2 $dur2 $del2;
+}
+
+body {
+  background: $bgColor;
+  background: linear-gradient(to left, $bgColor 40%, $bgColor2);
+  padding: 60px;
+  color: #FFF;
+  font-family: $mid-font;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+h1, h2{
+  font-family: $top-font;
+  margin: 10px 0;
+}
+
+span {
+  display: inline-block;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+  text-align: right;
+}
+
+a {
+  color: #80DEEA;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+code {
+  color: #000;
+  opacity: 0.5;
+}
+
+#sidebar{
+  position: absolute;
+  top: 0; left: 0;
+  width: 250px;
+  height: 80%;
+  margin: 40px 0 0 40px;
+}
+#page{
+  /* margin-left: 250px;
+  / max-width:800px; */
+  margin-left: 80px;
+  margin-top: -38px;
+  overflow:hidden;
+  height:44px;
+  
+}
+#footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#footer-text{
+  padding-left: 60px;
+  opacity:0.6;
+}
+
+.menu {
+  position: relative;
+  margin: 0 20px 0 0;
+  padding-left: 1.25em;
+  cursor: pointer;
+  width: 30px;
+  height: 50px;
+  text-align: right;
+}
+
+/*A simple overlay that registers the menu click*/
+/*needed because of e.stopPropagation(); blocking the menu-global click function*/
+.click-blocker{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu-close {
+  font-size: 0em;
+  opacity: 0;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: 0;
+
+  @include transition(all, 0.2s, 0s, null, null, null);
+}
+
+.menu-close-visible {
+  font-size: 2em;
+  opacity: 1;
+
+  @include transition(all, 0.2s, 0.4s, null, null, null);
+
+}
+
+.menu-global {
+  position: absolute;
+  left: 0;
+  height: 10px; 
+  width: 100%;
+  background-color: #FFF;
+
+  @include transition(all, 0.2s, 0s, null, null, null);
+}
+
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 18px;
+}
+.menu-bottom, .menu-hidden {
+  top: 36px;
+}
+
+.menu-text{
+  color: #000;
+  opacity: 0;
+  font-size: 0em;
+  padding: 10px 0;
+  @include transition(all, 0.1s, 0s, null, null, null);
+}
+
+.expand {
+  box-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px, rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
+  width: 200px;
+  height: $itemHeight;
+  background: $menuColor(length($menuColor));  //set default as last color
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  @include transition(all, 0.5s, 0s, left, 0.1s, 0s);
+}
+
+.expand:hover {
+  left: 10px;
+  @include transition(all, 0.2s, 0s, null, null, null);
+}
+
+.menu-top-expand {
+  top: $itemHeight;
+  background: nth($menuColor, 1);
+  @include transition(all, 0.5s, 0.4s, left, 0.1s, 0s);
+}
+
+.menu-middle-expand {
+  top: $itemHeight*2;
+  background: nth($menuColor, 2);
+  @include transition(all, 0.5s, 0.3s, left, 0.1s, 0s);
+}
+
+.menu-bottom-expand {
+  top: $itemHeight*3;
+  background: nth($menuColor, 3);
+  @include transition(all, 0.5s, 0.2s, left, 0.1s, 0s);
+}
+
+.menu-text-expand{
+  opacity: 0.6;
+  padding: 10px;
+  font-size: 1.3em;
+  @include transition(all, 0.2s, 0.7s, font-size, 0.1s, 0s);
+}
+
+@for $i from 1 through length($menuColor) {
+  .menu-hidden-expand:nth-child(#{$i}) {
+    background: nth($menuColor, $i);
+    top: $itemHeight*$i;
+
+  }
+}
+
+.menu-hidden-expand:nth-child(4) {
+  @include transition(all, 0.5s, 0.1s, left, 0.1s, 0s);
+}
+.menu-hidden-expand:nth-last-of-type(1) {
+  height: $itemHeight*1;
+
+}
+/**************END ADDITIONAL MENU ITEMS*******************/
