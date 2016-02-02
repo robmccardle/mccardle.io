@@ -1,4 +1,6 @@
 language: ruby
+branches:
+  only: master
 rvm:
 - '2.2'
 cache: bundler
@@ -17,6 +19,6 @@ exclude:
 - s3_website.yml
 url: https://mccardle.io
 script:
-- echo "Hello Travis"
+- echo "Executing bundler..."
 after_script:
 - bundle exec rake deploy

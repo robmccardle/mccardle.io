@@ -9,11 +9,23 @@
 title: Rob McCardle. Creative Technology Director, Buckinghamshire UK
 email: rob@mccardle.io
 description: > # this means to ignore newlines until "baseurl:"
-  mccardle.io
+  Rob McCardle. Creative Technology Director, Buckinghamshire UK
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://mccardle.io" # the base hostname & protocol for your site
+url: https://mccardle.io
 twitter_username: robmccardle
 github_username:  robmccardle
+author: Rob McCardle
+copyright: Rob McCardle
 
 # Build settings
 markdown: kramdown
+exclude: ['Gemfile', 'Gemfile.lock', '*.sublime-*', 'lib','vendor', 'Rakefile', 's3_website.yml']
+relative_permalinks: false
+timezone: Europe/London
+permalink: /:year/:month/:day/:title.html
+gems:
+    - jekyll-redirect-from
+    - jekyll-feed
+    - jekyll-sitemap
+sass:
+  style: compressed
