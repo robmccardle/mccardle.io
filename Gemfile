@@ -7,5 +7,4 @@ gem 'jekyll-sitemap', '~> 0.10.0'
 
 gem 'kramdown'
 gem 's3_website'
-gem 'therubyracer', '~> 0.12.2'
 gem 'rake'
