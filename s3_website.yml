@@ -52,6 +52,7 @@ redirects:
 
 
 # cloudfront_distribution_id: your-dist-id
+cloudfront_distribution_id: E5SENCZR54WUC
 
 # cloudfront_distribution_config:
 #   default_cache_behavior:
