@@ -1,2 +1,2 @@
 # mccardle.io
-Source for [https://mccardle.io](https://mccardle.io){:target="_blank"}
+Source for <a href="https://mccardle.io" target="_blank">https://mccardle.io</a>
